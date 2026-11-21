@@ -171,12 +171,12 @@ export default function Home() {
               {/* Profile image */}
               <div className="glass-panel relative h-[84%] w-[84%] overflow-hidden rounded-full border border-cyan-400/30 shadow-[0_0_60px_rgba(34,211,238,0.12)]">
 
-                <img
-                  src="/images/IMG_6983.jpeg"
-                  alt="MD Anas Alam - C# .NET Backend Developer"
-                  className="h-full w-full rounded-full object-cover object-center"
-                  loading="eager"
-                />
+            <img
+  src={`${process.env.NODE_ENV === "production" ? "/Anas-fullstack-portfolio" : ""}/images/IMG_6983.jpeg`}
+  alt="MD Anas Alam - C# .NET Backend Developer"
+  className="h-full w-full rounded-full object-cover object-center"
+  loading="eager"
+/>
 
               </div>
 
