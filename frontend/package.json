@@ -2,12 +2,13 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "build:static:next": "next build",
+  "start": "next start",
+  "lint": "eslint"
+},
   "dependencies": {
     "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.2",

@@ -1,12 +1,24 @@
+
 import type { NextConfig } from "next";
 
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  ...(isGitHubPages
+    ? {
+        output: "export" as const,
+        basePath: "/Anas-fullstack-portfolio",
+      }
+    : {}),
+
+  images: {
+    unoptimized: isGitHubPages,
+  },
+
   experimental: {
     agentFeedback: true,
   },
-  cacheComponents: true,
-  partialPrefetching: true,
+
   turbopack: {
     rules: {
       "*.css": {
