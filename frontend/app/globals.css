@@ -1,0 +1,506 @@
+
+@import "tailwindcss";
+
+/* =========================================
+   ANAS ALAM PORTFOLIO — DESIGN SYSTEM
+========================================= */
+
+:root {
+  --background: #050816;
+  --background-secondary: #0b1224;
+  --surface: #101a30;
+
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+
+  --primary: #22d3ee;
+  --primary-light: #67e8f9;
+
+  --border: rgba(148, 163, 184, 0.14);
+
+  --font-heading: var(--font-geist-sans);
+  --font-body: var(--font-geist-sans);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: #ffffff;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #164e63;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* =========================================
+   REUSABLE CONTAINER
+========================================= */
+
+.portfolio-container {
+  width: min(100% - 48px, 1280px);
+  margin-inline: auto;
+}
+
+/* =========================================
+   GLOBAL SECTION LAYOUT
+========================================= */
+
+main > div > section:not(#home) {
+  position: relative;
+  isolation: isolate;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  scroll-margin-top: 80px;
+}
+
+/* =========================================
+   ABOUT SECTION — SPACING CONTROL
+========================================= */
+
+main > div > section#about {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  scroll-margin-top: 80px;
+}
+
+#about > .portfolio-container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* =========================================
+   GLOBAL SECTION DIVIDERS
+========================================= */
+
+main > div > section:not(#home)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+
+  left: max(24px, calc((100% - 1280px) / 2));
+  right: max(24px, calc((100% - 1280px) / 2));
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 211, 238, 0.12) 12%,
+    rgba(34, 211, 238, 0.55) 50%,
+    rgba(34, 211, 238, 0.12) 88%,
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+main > div > section:not(#home)::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+
+  width: min(280px, 45%);
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: rgba(34, 211, 238, 0.3);
+  filter: blur(9px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.section-label {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    100deg,
+    #ffffff 10%,
+    #67e8f9 55%,
+    #22d3ee 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* =========================================
+   GLASSMORPHISM
+========================================= */
+
+.glass-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 27, 48, 0.72),
+    rgba(8, 18, 34, 0.52)
+  );
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+  transition:
+    border-color 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.glass-panel:hover {
+  border-color: rgba(34, 211, 238, 0.25);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.22),
+    0 0 25px rgba(34, 211, 238, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 22px;
+
+  background: rgba(15, 27, 48, 0.52);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+
+  transition: all 300ms ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(34, 211, 238, 0.3);
+
+  background: rgba(17, 35, 55, 0.68);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   HERO BACKGROUND
+========================================= */
+
+.hero-grid {
+  background-image:
+    linear-gradient(
+      rgba(34, 211, 238, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(34, 211, 238, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 90%
+  );
+}
+
+.hero-glow {
+  background: radial-gradient(
+    circle,
+    rgba(8, 145, 178, 0.20) 0%,
+    rgba(8, 145, 178, 0.07) 35%,
+    transparent 70%
+  );
+}
+
+/* =========================================
+   HERO PARTICLES
+========================================= */
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  opacity: 0.65;
+
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, rgba(103, 232, 249, 0.8) 99%, transparent),
+    radial-gradient(2px 2px at 25% 75%, rgba(34, 211, 238, 0.7) 99%, transparent),
+    radial-gradient(3px 3px at 45% 35%, rgba(103, 232, 249, 0.65) 99%, transparent),
+    radial-gradient(2px 2px at 65% 80%, rgba(34, 211, 238, 0.75) 99%, transparent),
+    radial-gradient(2px 2px at 82% 25%, rgba(103, 232, 249, 0.8) 99%, transparent),
+    radial-gradient(3px 3px at 92% 65%, rgba(34, 211, 238, 0.65) 99%, transparent);
+
+  background-size: 420px 360px;
+
+  animation: particle-drift 24s linear infinite;
+}
+
+.hero-particles::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,0.65) 99%, transparent),
+    radial-gradient(2px 2px at 55% 15%, rgba(34,211,238,0.6) 99%, transparent),
+    radial-gradient(1px 1px at 75% 50%, rgba(255,255,255,0.7) 99%, transparent);
+
+  background-size: 300px 280px;
+
+  animation: particle-float 18s ease-in-out infinite alternate;
+}
+
+@keyframes particle-drift {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 420px 360px;
+  }
+}
+
+@keyframes particle-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-18px, 24px, 0);
+  }
+}
+
+/* =========================================
+   SECTION DIVIDER COMPONENT
+========================================= */
+
+.section-divider {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  width: 100%;
+  margin-top: 64px;
+
+  color: var(--muted);
+}
+
+.section-divider::before {
+  content: "";
+
+  height: 1px;
+  flex: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(34, 211, 238, 0.55),
+    rgba(148, 163, 184, 0.08)
+  );
+}
+
+.section-divider-number {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.section-divider-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .portfolio-container {
+    width: min(100% - 40px, 1280px);
+  }
+
+  main > div > section:not(#home) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  main > div > section#about {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .section-divider {
+    margin-top: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-container {
+    width: min(100% - 32px, 1280px);
+  }
+
+  main > div > section:not(#home) {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  main > div > section#about {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  main > div > section:not(#home)::before {
+    left: 20px;
+    right: 20px;
+  }
+
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .section-divider {
+    margin-top: 36px;
+    gap: 9px;
+  }
+
+  .section-divider-label {
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .portfolio-container {
+    width: calc(100% - 28px);
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

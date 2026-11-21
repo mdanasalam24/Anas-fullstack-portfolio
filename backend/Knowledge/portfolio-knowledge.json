@@ -1,0 +1,117 @@
+[
+  {
+    "intent": "greeting",
+    "keywords": [
+      "hello",
+      "hi",
+      "hey",
+      "namaste",
+      "hii",
+      "good morning",
+      "good evening"
+    ],
+    "responseEn": "Hello! Welcome to Anas's portfolio. I can help you explore his skills, projects, experience and education. What would you like to know?",
+    "responseHi": "Namaste! Anas ke portfolio mein aapka swagat hai. Main aapko unke skills, projects, experience aur education ke baare mein bata sakta hoon. Aap kya jaana chahenge?"
+  },
+  {
+    "intent": "skills",
+    "keywords": [
+      "skills",
+      "technical skills",
+      "programming skills",
+      "technologies",
+      "tech stack",
+      "technology",
+      "what can you do",
+      "skills kya hain",
+      "kaunsi technology",
+      "kya aata hai"
+    ],
+    "responseEn": "Anas works with C#, .NET, ASP.NET Core Web API, SQL Server, Entity Framework Core and backend development. He also has experience with Windows Forms and industrial software applications.",
+    "responseHi": "Anas C#, .NET, ASP.NET Core Web API, SQL Server aur Entity Framework Core par kaam karte hain. Unhe backend development, Windows Forms aur industrial software applications ka bhi experience hai."
+  },
+  {
+    "intent": "experience",
+    "keywords": [
+      "experience",
+      "work experience",
+      "professional experience",
+      "current job",
+      "company",
+      "where do you work",
+      "job",
+      "kitna experience",
+      "kahan kaam",
+      "kaunsi company"
+    ],
+    "responseEn": "Anas works as an Assistant Software Engineer at Bestek Engineering Pvt. Ltd. His work includes C#/.NET applications, SQL Server integration and industrial software development.",
+    "responseHi": "Anas Bestek Engineering Pvt. Ltd. mein Assistant Software Engineer ke roop mein kaam karte hain. Unka kaam C#/.NET applications, SQL Server integration aur industrial software development se related hai."
+  },
+  {
+    "intent": "education",
+    "keywords": [
+      "education",
+      "qualification",
+      "degree",
+      "college",
+      "university",
+      "graduation",
+      "btech",
+      "study",
+      "padhai",
+      "qualification kya hai"
+    ],
+    "responseEn": "Anas completed his B.Tech in Computer Science and Engineering with an Artificial Intelligence and Machine Learning specialization in 2025 from Gulzar Group of Institutes.",
+    "responseHi": "Anas ne 2025 mein Gulzar Group of Institutes se Computer Science and Engineering mein B.Tech complete kiya hai, jisme Artificial Intelligence aur Machine Learning specialization thi."
+  },
+  {
+    "intent": "projects",
+    "keywords": [
+      "projects",
+      "portfolio projects",
+      "github projects",
+      "your projects",
+      "project details",
+      "what have you built",
+      "projects batao",
+      "kaunse projects",
+      "kya banaya"
+    ],
+    "responseEn": "Anas has worked on ASP.NET Core Web APIs, a Student Management API, a Product Management RESTful API and industrial software applications. You can explore the Projects section of his portfolio for more details.",
+    "responseHi": "Anas ne ASP.NET Core Web APIs, Student Management API, Product Management RESTful API aur industrial software applications par kaam kiya hai. Aap unke portfolio ke Projects section mein details dekh sakte hain."
+  },
+  {
+    "intent": "contact",
+    "keywords": [
+      "contact",
+      "email",
+      "hire",
+      "hiring",
+      "connect",
+      "get in touch",
+      "contact details",
+      "kaise contact",
+      "email address",
+      "hire you"
+    ],
+    "responseEn": "You can contact Anas using the Contact section of this portfolio. Submit your name, email, subject and message through the contact form.",
+    "responseHi": "Aap is portfolio ke Contact section se Anas se connect kar sakte hain. Contact form mein apna naam, email, subject aur message submit karein."
+  },
+  {
+    "intent": "backend",
+    "keywords": [
+      "backend",
+      "backend development",
+      "asp.net",
+      "asp.net core",
+      "dotnet",
+      ".net",
+      "web api",
+      "c sharp",
+      "c#",
+      "backend developer"
+    ],
+    "responseEn": "Anas focuses on C# and .NET backend development. He has worked with ASP.NET Core Web APIs, Entity Framework Core, SQL Server, authentication and RESTful API development.",
+    "responseHi": "Anas ka focus C# aur .NET backend development par hai. Unhone ASP.NET Core Web APIs, Entity Framework Core, SQL Server, authentication aur RESTful API development par kaam kiya hai."
+  }
+]
